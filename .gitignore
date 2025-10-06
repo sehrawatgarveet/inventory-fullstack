@@ -1,14 +1,14 @@
-# Node dependencies
+# Node modules
 node_modules
 client/node_modules
 backend/node_modules
 
-# Cache folders
+# Cache
 client/.cache
 backend/.cache
 
 # Build folders
 client/build
 
-# Env files
+# Environment files
 .env
