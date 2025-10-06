@@ -3,12 +3,13 @@ node_modules
 client/node_modules
 backend/node_modules
 
-# Cache
+# Cache folders
 client/.cache
 backend/.cache
 
 # Build folders
 client/build
+backend/build
 
 # Environment files
 .env
