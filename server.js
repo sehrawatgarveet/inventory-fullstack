@@ -20,6 +20,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/products", productRoutes);
+app.get("/", (_req, res) => res.send("Hi from ashu"));
 
 // MongoDB Connection (no app.listen)
 mongoose.connect(process.env.MONGO_URI)
