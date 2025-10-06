@@ -28,4 +28,4 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('❌ MongoDB connection error:', err));
 
 // ✅ Export the app instead of listening
-module.exports = app;
+export default app;
