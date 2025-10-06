@@ -10,7 +10,7 @@ const app = express();
 
 // ✅ Enable CORS (allow requests from React frontend)
 app.use(cors({
-  origin: "http://localhost:3000",  // allow only React dev server
+  origin: "*",  // allow only React dev server
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"]
 }));
@@ -21,12 +21,10 @@ app.use(express.json());
 // Routes
 app.use("/api/products", productRoutes);
 
-// MongoDB Connection
+// MongoDB Connection (no app.listen)
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => {
-    console.log("✅ MongoDB Connected");
-    app.listen(process.env.PORT, () => {
-      console.log(`🚀 Server running on port ${process.env.PORT}`);
-    });
-  })
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .then(() => console.log('✅ MongoDB Connected'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
+
+// ✅ Export the app instead of listening
+module.exports = app;
